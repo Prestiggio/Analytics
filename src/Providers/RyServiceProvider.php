@@ -4,6 +4,9 @@ namespace Ry\Analytics\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Routing\Router;
+use Ry\Analytics\Console\Commands\Slugify;
+use Ry\Analytics\Slugger;
+use Ry\Analytics\Matcher;
 
 class RyServiceProvider extends ServiceProvider
 {
@@ -51,6 +54,23 @@ class RyServiceProvider extends ServiceProvider
      */
     public function register()
     {
+    	
+    	$this->app->register(\Ry\Categories\Providers\RyServiceProvider::class);
+    	
+    	$this->app->singleton("ryanalytics.slygify", function($app){
+    		return new Slugify();
+    	});
+    	
+    	$this->app->singleton("ryanalytics.slug", function($app){
+    		return new Slugger();
+    	});
+    	
+    	$this->app->singleton("ryanalytics.matcher", function($app){
+    		return new Matcher();
+    	});
+    	
+    	$this->commands(["ryanalytics.slygify"]);
+    	
     }
     public function map()
     {    	
