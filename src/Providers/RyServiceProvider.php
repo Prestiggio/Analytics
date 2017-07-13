@@ -7,6 +7,7 @@ use Illuminate\Routing\Router;
 use Ry\Analytics\Console\Commands\Slugify;
 use Ry\Analytics\Slugger;
 use Ry\Analytics\Matcher;
+use Ry\Analytics\Analytic;
 
 class RyServiceProvider extends ServiceProvider
 {
@@ -67,6 +68,10 @@ class RyServiceProvider extends ServiceProvider
     	
     	$this->app->singleton("ryanalytics.matcher", function($app){
     		return new Matcher();
+    	});
+    	
+    	$this->app->singleton("ryanalytics", function($app){
+    		return new Analytic();
     	});
     	
     	$this->commands(["ryanalytics.slygify"]);
