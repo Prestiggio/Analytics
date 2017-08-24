@@ -26,6 +26,7 @@ class ConstraintRyAnalyticsFulfireact extends Migration
     {
         Schema::table('ry_analytics_fulfilment_reactions', function (Blueprint $table) {
         	$table->dropForeign("ry_analytics_fulfilment_reactions_fulfilment_id_foreign");
+        	$table->dropIndex("ry_analytics_fulfilment_reactions_fulfilment_id_foreign");
         });
     }
 }
