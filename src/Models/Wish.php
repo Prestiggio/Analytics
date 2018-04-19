@@ -13,8 +13,6 @@ class Wish extends Model
 	
 	protected $fillable = ["keywords", "ry_categories_category_group_id"];
 	
-	protected $with = ["offers"];
-	
 	public function owner() {
 		return $this->belongsTo("App\User", "user_id");
 	}
