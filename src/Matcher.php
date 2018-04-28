@@ -18,6 +18,7 @@ class Matcher
 			$ar = ["content" => $keywords, "user" => $user];
 			Mail::send("ryanalytics::emails.wishlist", $ar, function($message) use ($user){
 				$message->to(env("contact"));
+				$message->from(env("contact", "manager@topmora.com"), env("SHOP", "TOPMORA SHOP"));
 				$message->subject("Wish list de " . $user->name);
 			});
 		}
@@ -39,7 +40,8 @@ class Matcher
 						"offer" => $application
 				], function($message){
 					$message->to(env("contact"));
-					$message->subject("Un offre pour vous sur Kipa");
+					$message->subject("Un offre pour vous sur " . env("SHOP", "TOPMORA SHOP"));
+					$message->from(env("contact", "manager@topmora.com"), env("SHOP", "TOPMORA SHOP"));
 				});
 			}
 		}
