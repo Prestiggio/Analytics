@@ -12,5 +12,14 @@
         "psr-4": {
             "Ry\\Analytics\\": "src/"
         }
-    }
+    },
+    "require": {
+        "ry/categories": "dev-prefixed"
+    },
+    "repositories": [
+		{
+	        "type": "vcs",
+	        "url": "git@topmora.com:/opt/git/modules/ry/categories.git"
+        }
+    ]
 }
