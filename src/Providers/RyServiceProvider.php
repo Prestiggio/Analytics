@@ -18,7 +18,6 @@ class RyServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-    	parent::boot();
     	/*
     	$this->publishes([    			
     			__DIR__.'/../config/ryanalytics.php' => config_path('ryanalytics.php')
