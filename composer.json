@@ -13,5 +13,13 @@
             "Ry\\Analytics\\": "src/"
         }
     },
-    "require": {}
+    "require": {
+        "ry/categories": "dev-prefixed"
+    },
+    "repositories": [
+		{
+	        "type": "vcs",
+	        "url": "git@topmora.com:/opt/git/modules/ry/categories.git"
+        }
+    ]
 }

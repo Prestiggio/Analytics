@@ -19,6 +19,7 @@ class Slugger
 		});
 		
 		call_user_func([$classname, "saved"], function($entity){
+			Slug::unguard();
 			if(!$entity->slugs()->exists()) {
 				$entity->slugs()->create([
 					"slug" => $entity->slug
@@ -29,6 +30,7 @@ class Slugger
 					"slug" => $entity->slug
 				]);
 			}
+			Slug::reguard();
 		});
 	}
 }

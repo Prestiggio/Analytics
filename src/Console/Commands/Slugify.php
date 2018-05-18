@@ -59,7 +59,6 @@ class Slugify extends Command
         }
         
         $all = call_user_func([$classname, "all"]);
-        Model::unguard();
         foreach($all as $a) {
         	if(!$a->slugs()->exists()) {
         		$a->slugs()->create([
@@ -67,7 +66,7 @@ class Slugify extends Command
         		]);	
         	}
         }
-        Model::reguard();
+        
     }
     
     protected function getArguments() {
