@@ -14,7 +14,7 @@ class AnalyticsWishlist extends Migration
     {
         Schema::create('ry_analytics_wishes', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer("user_id", false, true);
+            $table->unsignedBigInteger("user_id");
             $table->integer("ry_categories_category_group_id", false, true);
             $table->char("keywords");
             $table->timestamps();

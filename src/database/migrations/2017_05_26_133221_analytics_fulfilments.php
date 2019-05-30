@@ -15,7 +15,7 @@ class AnalyticsFulfilments extends Migration
         Schema::create('ry_analytics_fulfilments', function (Blueprint $table) {
             $table->increments('id');
             $table->integer("wish_id", false, true);
-            $table->integer("user_id", false, true);
+            $table->unsignedBigInteger("user_id");
             $table->timestamps();
         });
     }
