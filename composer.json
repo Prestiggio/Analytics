@@ -14,7 +14,7 @@
         }
     },
     "require": {
-        "ry/categories": "dev-prefixed"
+        "ry/categories": "dev-unbaumed"
     },
     "repositories": [
 		{
