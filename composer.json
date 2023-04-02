@@ -14,12 +14,6 @@
         }
     },
     "require": {
-        "ry/categories": "dev-unbaumed"
-    },
-    "repositories": [
-		{
-	        "type": "vcs",
-	        "url": "git@topmora.com:/opt/git/modules/ry/categories.git"
-        }
-    ]
+        "prestiggio/categories": "dev-unbaumed"
+    }
 }
